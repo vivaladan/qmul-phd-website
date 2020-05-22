@@ -6,26 +6,33 @@
 </head>
 
 <body>
-    <h1>Well hai there</h1>
     <div class="container">
-        <div class="row">
-            <form action="post">
+        <h2>Open Letter</h2>
+        <br>
+        <div class="embed-responsive embed-responsive-16by9 shadow-lg p-3 mb-5 bg-white rounded">
+            <iframe class="embed-responsive-item"
+                src="https://docs.google.com/document/d/e/2PACX-1vQvBvmkR-tPWuOXzzBHOD1lnceA7JDoj7QNexPRKT__tsddjExIU-OycuYHOx7zvYPpF3vUzPDzopZI/pub?embedded=true"></iframe>
+        </div>
+        <div>
+            <h2>Your Signature</h2>
+            <form action="post" class="form-horizontal">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Name">
+                    <label for="name" class="control-label">Name</label>
+                    <input type="text" id="name" class="form-control" required placeholder="Name">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="University">
+                    <label for="institution" class="control-label">Institution</label>
+                    <input type="text" id="institution" class="form-control" required placeholder="Institution">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Email (Optional)">
+                    <label for="email" class="control-label">Email Address (Optional)</label>
+                    <input type="text" class="form-control" placeholder="Email Address">
                 </div>
             </form>
         </div>
-        <div class="row">
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item"
-                    src="https://docs.google.com/document/d/e/2PACX-1vQvBvmkR-tPWuOXzzBHOD1lnceA7JDoj7QNexPRKT__tsddjExIU-OycuYHOx7zvYPpF3vUzPDzopZI/pub?embedded=true"></iframe>
-            </div>
+        <br>
+        <div>
+            <h2>Other Signatures</h2>
         </div>
     </div>
 </body>
