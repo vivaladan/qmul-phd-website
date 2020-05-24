@@ -7,7 +7,6 @@ module.exports = function (context, req) {
         timestamp: new Date(),
         name: req.body.name,
         institution: req.body.institution,
-        email: req.body.email,
     };
 
     axios.patch("https://qmul-phd.firebaseio.com/signatures.json", newObj)
