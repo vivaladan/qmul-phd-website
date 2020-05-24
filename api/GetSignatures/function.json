@@ -14,16 +14,6 @@
       "type": "http",
       "direction": "out",
       "name": "res"
-    },
-    {
-      "name": "signatures",
-      "type": "cosmosDB",
-      "databaseName": "qmul-phd",
-      "collectionName": "signatures",
-      "connectionStringSetting": "CosmosDBConnection",
-      "direction": "in",
-      "sqlQuery": "SELECT * FROM c ORDER BY c.timestamp DESC"
-      
     }
   ]
 }

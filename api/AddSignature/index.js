@@ -1,18 +1,30 @@
 const { v4: uuidv4 } = require('uuid');
+const axios = require('axios');
 
-module.exports = async function (context, req) {
-    return {
-        signature: JSON.stringify({
-            id: uuidv4(),
-            timestamp: new Date(),
-            name: req.body.name,
-            institution: req.body.institution,
-            email: req.body.email,
-        }),
-        res: {
-            body: {
+module.exports = function (context, req) {
+    var newObj = {};
+    newObj[uuidv4()] = {
+        timestamp: new Date(),
+        name: req.body.name,
+        institution: req.body.institution,
+        email: req.body.email,
+    };
 
+    axios.patch("https://qmul-phd.firebaseio.com/signatures.json", newObj)
+        .then(resp => {
+            res: {
+                body: {    
+                }
             }
-        }
-    }
+            context.done();
+        })
+        .catch(err => {
+            res = {
+                status: 400,
+                body: {    
+                    error: err
+                }
+            };
+            context.done();
+        });
 }
