@@ -12,7 +12,12 @@
 
 <body>
     <div class="container" id="app" v-cloak>
-        <h2>Open Letter</h2>
+        <br>
+        <h3>Open letter from QMUL PhD students to Colin Bailey (Principal), Andrew Livingstone (VP for Research) and Adrian Armstrong (Director, Doctoral College)</h3>
+        <br>
+        <p>
+            We are a collective of PhD students studying at QMUL but we are not representatives or speaking for QMUL. This website is in no way affiliated with QMUL.
+        </p>
         <br>
         <div class="embed-responsive embed-responsive-16by9 shadow-lg p-3 mb-5 bg-white rounded">
             <iframe class="embed-responsive-item"
@@ -24,6 +29,11 @@
                 <div class="form-group">
                     <label for="name" class="control-label">Name</label>
                     <input type="text" id="name" class="form-control" required placeholder="Name" v-model="name">
+                </div>
+                <div class="form-group">
+                    <label for="position" class="control-label">Position</label>
+                    <input type="text" id="position" class="form-control" required placeholder="Position"
+                        v-model="position">
                 </div>
                 <div class="form-group">
                     <label for="institution" class="control-label">Institution</label>
@@ -49,6 +59,7 @@
                     <tr v-for="sig in signatures">
                         <td>{{sig.timestamp}}</td>
                         <td>{{sig.name}}</td>
+                        <td>{{sig.position}}</td>
                         <td>{{sig.institution}}</td>
                     </tr>
                 </tbody>
@@ -75,6 +86,7 @@
                 data: {
                     name: '',
                     institution: '',
+                    position: '',
                     alreadySigned: false,
                     signatures: [],
                     error: '',
@@ -88,6 +100,7 @@
                     this.signatures = signatures.map(c => ({
                         name: c.name,
                         institution: c.institution,
+                        position: c.position,
                         timestamp: new Date(c.timestamp).toLocaleString()
                     }));
                 },
@@ -102,6 +115,7 @@
                             },
                             body: JSON.stringify({
                                 name: this.name,
+                                position: this.position,
                                 institution: this.institution
                             })
                         });

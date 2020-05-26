@@ -12,6 +12,7 @@ module.exports = function (context, req) {
                         id: c.id,
                         name: c.name,
                         institution: c.institution,
+                        position: c.position,
                         timestamp: c.timestamp,
                     })
                 }
