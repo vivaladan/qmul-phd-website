@@ -6,6 +6,7 @@ module.exports = function (context, req) {
     newObj[uuidv4()] = {
         timestamp: new Date(),
         name: req.body.name,
+        position: req.body.position,
         institution: req.body.institution,
     };
 
