@@ -36,6 +36,11 @@
                         v-model="position">
                 </div>
                 <div class="form-group">
+                    <label for="department" class="control-label">Department</label>
+                    <input type="text" id="department" class="form-control" required placeholder="Department"
+                        v-model="department">
+                </div>
+                <div class="form-group">
                     <label for="institution" class="control-label">Institution</label>
                     <input type="text" id="institution" class="form-control" required placeholder="Institution"
                         v-model="institution">
@@ -60,6 +65,7 @@
                         <td>{{sig.timestamp}}</td>
                         <td>{{sig.name}}</td>
                         <td>{{sig.position}}</td>
+                        <td>{{sig.department}}</td>
                         <td>{{sig.institution}}</td>
                     </tr>
                 </tbody>
@@ -87,6 +93,7 @@
                     name: '',
                     institution: '',
                     position: '',
+                    department: '',
                     alreadySigned: false,
                     signatures: [],
                     error: '',
@@ -101,6 +108,7 @@
                         name: c.name,
                         institution: c.institution,
                         position: c.position,
+                        department: c.department,
                         timestamp: new Date(c.timestamp).toLocaleString()
                     }));
                 },
@@ -116,6 +124,7 @@
                             body: JSON.stringify({
                                 name: this.name,
                                 position: this.position,
+                                department: this.department,
                                 institution: this.institution
                             })
                         });

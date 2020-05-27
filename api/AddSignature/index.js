@@ -7,6 +7,7 @@ module.exports = function (context, req) {
         timestamp: new Date(),
         name: req.body.name,
         position: req.body.position,
+        department: req.body.department,
         institution: req.body.institution,
     };
 

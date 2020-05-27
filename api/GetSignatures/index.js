@@ -13,6 +13,7 @@ module.exports = function (context, req) {
                         name: c.name,
                         institution: c.institution,
                         position: c.position,
+                        department: c.department,
                         timestamp: c.timestamp,
                     })
                 }
